@@ -54,6 +54,8 @@ function calcularAlturaTriangulo(lado1, base) {
     }
 }
 
+//Reto: -Sabiendo lo que miden los 3 lados, encontrar altura de un triangulo escaleno (todos los lados diferentes).
+
 console.log({
     ladoTriangulo1,
     ladoTriangulo2,
