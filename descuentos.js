@@ -37,7 +37,7 @@ function calcularPrecioConDescuento(){
     // }
 
     function isCouponInArray(couponElement){ // {name, discount}
-       return couponElement.name == coupon
+    return couponElement.name == coupon
     }
 
     const couponInArray = couponList.find(isCouponInArray) //{}
