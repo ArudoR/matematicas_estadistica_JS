@@ -66,7 +66,8 @@ console.log({
 console.groupEnd("Triangulo")
 
 console.group('TrianguloEscaleno')
-//Reto: -Sabiendo lo que miden los 3 lados, encontrar altura de un triangulo escaleno (todos los lados diferentes).
+//Reto: -Sabiendo lo que miden los 3 lados, 
+//encontrar altura de un triangulo escaleno (todos los lados diferentes).
 
 function calcularAlturaTrianguloEscaleno(lado1, lado2, lado3){
     const semiPerimetro = (lado1 + lado2 + lado3) / 2
