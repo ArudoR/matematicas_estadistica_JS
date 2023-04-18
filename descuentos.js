@@ -10,6 +10,12 @@ const arrayUObjeto = undefined //['Cupones': descuento]{}?
 function calcularPrecioConDescuento(){
     // (P * (100-D)) / 100
 
+    const couponsObj = {
+        'ArudoR': 30,
+        'Descuent0': 25,
+        'Copymark': 15
+    }
+
     const price = Number(inputPrice.value)
     const coupon = inputCoupon.value
 
@@ -18,21 +24,14 @@ function calcularPrecioConDescuento(){
         return
     }
 
-    function calculateDiscount(coupon) {
-        const couponDiscounts = {
-            'ArudoR': 30,
-            'Descuent0': 25,
-        };
+    let discount
 
-        if (couponDiscounts.hasOwnProperty(coupon)) {
-            return couponDiscounts[coupon];
-        } else {
-            pResult.innerText = 'El cupón no es válido'
-            return
-        }
+    if (couponsObj[coupon]) {
+        discount = couponsObj[coupon]
+    } else {
+        pResult.innerText = 'El cupón no es válido'
+        return
     }
-
-    const discount = calculateDiscount(coupon);
 
     // switch (coupon) {
     //     case 'ArudoR':
