@@ -6,6 +6,21 @@ function esImpar(lista){
     return (lista.length % 2)
 }
 
+function calcularModa(lista){
+    const listaCount = {};
+
+    for(let i = 0; i < lista.length; i++){
+        const elemento = lista[i];
+
+        if (listaCount[elemento]) {
+            listaCount[elemento] += 1;
+        } else{
+            listaCount[elemento] = 1;
+        }
+    }
+    console.log(listaCount);
+}
+
 function calcularMediana(listaDesordenada){
     const lista = ordenarLista(listaDesordenada)
     const listaEsPar = esPar(lista)
@@ -55,17 +70,4 @@ function ordenarLista(listaDesordenada){
         const lista = listaDesordenada.sort((a,b) => a-b)
     return lista
 }
-// let sumaLista = 0;
-// for (let i = 0; i < lista.length; i++) {
-//     sumaLista = sumaLista + lista[i]
-// }
 
-// const sumarTodosElementos = (valorAcumulado, nuevoValor)=> valorAcumulado + nuevoValor;
-
-// const sumaLista = lista.reduce ((a, b) => a + b)
-
-    //if (lista.length % 2){
-    //     return false;
-    // }else{
-    //     return true;
-    // }
