@@ -16,5 +16,9 @@ function medianaPorPersona(nombrePersona){
     const salarios = trabajos.map(function(elemento){
         return elemento.salario;
     })
-    console.log(salarios);
+
+    const medianaSalarios = PlatziMath.calcularMediana(salarios)
+    
+    console.log(medianaSalarios);
+    return  medianaSalarios
 }
