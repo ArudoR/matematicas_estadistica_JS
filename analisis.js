@@ -46,6 +46,22 @@ function proyeccionPorPersona(nombrePersona){
     return nuevoSalario
 }
 
+//Explicación de lo que esta sucendiendo aca abajo
+/*
+    Industrias Mokepon: {
+    2018: [salario]
+}
+    Industrias Mokepon: {
+    2018: [salarios, salarios, salarios]
+    2019: 
+    2025: 
+    2026: 
+},
+    Industrias Mokepon: {},
+    Industrias Mokepon: {},
+    Industrias Mokepon: {},
+*/
+
 const empresas = {}
 
 for (persona of salarios){
@@ -63,3 +79,42 @@ for (persona of salarios){
 }
 
 console.log(empresas);
+
+function medianaEmpresaYear(nombre, year){
+    if (!empresas [nombre]){
+        console.warn('La empresa no existe')
+    } else if (!empresas[nombre][year]){
+        console.warn('La empresa no dio salarios ese año')
+    } else {
+        return PlatziMath.calcularMediana(empresas[nombre][year])
+    }
+}
+
+function proyeccionPorEmpresa(nombre){
+    if (!empresas [nombre]){
+        console.warn('La empresa no existe')
+    } else {
+        const empresaYears = Object.keys(empresas[nombre])
+        const listaMedianaYears = empresaYears.map((year) => {
+            return medianaEmpresaYear(nombre, year)
+        })
+
+        let porcentajesCrecimiento = []
+
+        for (let i = 1; i < listaMedianaYears.length; i++){
+            const salarioActual = listaMedianaYears[i]
+            const salarioPasado = listaMedianaYears[i - 1]
+            const crecimiento = salarioActual - salarioPasado
+            const porcentajeCrecimiento = crecimiento / salarioPasado
+            porcentajesCrecimiento.push(porcentajeCrecimiento)
+    }
+    
+    const medianaPorcentajesCrecimiento = PlatziMath.calcularMediana(porcentajesCrecimiento)
+
+    const ultimaMediana = listaMedianaYears[listaMedianaYears.length - 1]
+    const aumento = ultimaMediana * medianaPorcentajesCrecimiento
+    const nuevaMediana = ultimaMediana + aumento
+
+    return nuevaMediana;
+    }
+}
