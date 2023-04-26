@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/capacidad_endeudamiento.css">
+    <title>Calcula tu capacidad de endeudamiento</title>
+</head>
+<body>
+
+    <header>
+        <h1>Calcula tu capacidad de endeudamiento</h1>
+        <p>Introduce tus ingresos y tus gastos y sabrás exactamente cual es tu capacidad de endeudamiento.</p>
+        <p>Se mostraran en formato de tabla una vez ingresada la descripción y la cantidad.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Ingresos</h2>
+
+            <form id="formIngresos">
+                <label for="descripcion-ingreso">
+                    <span>Descripción:</span>
+                    <input type="text" name="descripcion-ingreso" id="descripcion-ingreso">
+                </label>
+                
+                <label for="cantidad-ingreso">
+                    <span>Cantidad:</span>
+                    <input type="number" name="cantidad-ingreso" id="cantidad-ingreso">
+                </label>
+
+                <input class="addition" type="submit" value="Añadir">
+            </form>
+
+            <table>
+                <thead>
+                    <th>Descripción</th>
+                    <th>Cantidad</th>
+                </thead>
+
+                <tbody id="tabla-ingresos">
+
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Gastos</h2>
+
+            <form id="formGastos">
+                <label for="descripcion-gasto">
+                    <span>Descripción:</span>
+                    <input type="text" name="descripcion-gasto" id="descripcion-gasto">
+                </label>
+
+                <label for="cantidad-gasto">
+                    <span>Cantidad:</span>
+                    <input type="number" name="cantidad-gasto" id="cantidad-gasto">
+                </label>
+
+                <input class="addition" type="submit" value="Añadir">
+            </form>
+
+            <table>
+                <thead>
+                    <th>Descripción</th>
+                    <th>Cantidad</th>
+                </thead>
+
+                <tbody id="tabla-gastos">
+                    
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p id="resultado"></p>
+        <button id="calcular">Calcular</button>
+    </footer>
+    
+    <script src="./capacidad_endeudamiento.js"></script>
+</body>
+</html>
