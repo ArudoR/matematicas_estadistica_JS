@@ -1,0 +1,64 @@
+body {
+    background-color: #eee;
+}
+
+.title_div {
+    margin: auto;
+    display: table;
+}
+
+.main_title {
+    text-align: center;
+    font-family: monospace;
+    float: left;
+    position: relative;
+}
+.main_title span{
+    position: absolute;
+    right: 0;
+    width: 0;
+    background: #eee;
+    border-left: 2px solid #000;
+    animation: maquina 5s steps(37);
+}
+@keyframes maquina{
+    from{
+        width: 100%;
+    }
+    to{
+        width: 0;
+    }
+}
+
+.paragraph {
+    background: #F2D0CF;
+    height: 35px;
+    width: 100vw;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+.paragraph p {
+    margin-left: 40px;
+}
+
+ul li {
+    width: 280px;
+    margin-bottom: 25px;
+    background-color: transparent;
+    list-style: none;
+    color: #444;
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+    border: 2px solid #eee;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: all 1s ease;
+    box-shadow: .5rem .5rem 1rem #ccc, -.5rem -.5rem 1rem #fff;
+}
+ul li:hover{
+    box-shadow: .5rem .5rem 1rem #fff, -.5rem -.5rem 1rem #ccc;
+}
+ul li:active{
+    box-shadow: inset .2rem .2rem 1rem #fff, ins -.2rem -.2rem 1rem #ccc;
+}
