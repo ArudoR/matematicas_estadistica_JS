@@ -43,14 +43,20 @@ body {
     margin-left: 40px;
 }
 
+ul{
+    width: 350px;
+    height: 100vh;
+}
+
 ul li {
     width: 280px;
     margin-bottom: 25px;
     background-color: transparent;
     list-style: none;
-    color: #444;
+    color: #5f545c;
+    text-align: center;
     font-size: 1rem;
-    padding: 1rem 1.5rem;
+    padding: 1rem 0.5rem;
     border: 2px solid #eee;
     border-radius: .5rem;
     cursor: pointer;
@@ -62,4 +68,15 @@ ul li:hover{
 }
 ul li:active{
     box-shadow: inset .2rem .2rem 1rem #fff, ins -.2rem -.2rem 1rem #ccc;
+}
+
+ul li a{
+    display: block;
+    padding: 0;
+    text-decoration: none;
+    color: inherit;
+}
+
+ul li:hover a{
+    color: #1D8DC8;
 }
